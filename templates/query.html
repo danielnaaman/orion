@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}</h2>
+
+<div class="row">
+    <div class="col">
+        <b>Form</b>
+        <form method=post>
+            {{ form.csrf_token }}
+            <div class="form-group">
+                {{ form.state.label }}
+                {{ form.state(class_="form-control text-capitalize")}}
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        {{ form.startDate.label }}
+                        {{ form.startDate(class_="form-control") }}
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        {{ form.endDate.label }}
+                        {{ form.endDate(class_="form-control") }}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input class="btn btn-info" type="submit" value="Query">
+            </div>
+        </form>
+        <div>
+            <b>Valid Date Ranges</b>
+            <ul>
+                <li title="mm.dd.yyyy">01.01.2015 - 01.31.2015</li>
+                <li title="mm.dd.yyyy">02.01.2015 - 02.28.2015</li>
+                <li title="mm.dd.yyyy">03.01.2015 - 03.31.2015</li>
+                <li title="mm.dd.yyyy"><b>04.01.2015 - 04.30.2015</b></li>
+                <li title="mm.dd.yyyy"><b>05.01.2015 - 05.31.2015</b></li>
+                <li title="mm.dd.yyyy">06.01.2015 - 06.30.2015</li>
+            </ul>
+            <p><span style="color: red;">* </span>It is highly recommended to test using California, there are more then several states that might produce issues.</p>
+        </div>
+    </div>
+    <div class="col">
+        <b>Result</b>
+        <img src="{{ chart }}" alt="" />
+    </div>
+</div>
+{% endblock %}

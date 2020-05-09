@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <div class="jumbotron">
+        <h1>Data Sets</h1>
+        <p>This page details both of the data sets I've chosen for my project, with the first being an Average of Avocado Prices and the second an Average of Temperatures in the same states as the first database with overlapping in the year of 2015.</p>
+    </div>
+
+<div class="row">
+    <div class="col">
+        <a href="{{ url_for('avocado_prices') }}"><h2>Avocado Prices</h2></a>
+        <p>This data set file details Avocado prices in the USA starting from 2016 and going all the way to 2017.</p>
+    </div>
+    <div class="col">
+        <a href="{{ url_for('average_weather') }}"><h2>Average Weather</h2></a>
+        <p>This data set details average temperatures across the USA states. It includes just the year of 2015.</p>
+    </div>
+</div>
+
+{% endblock %}

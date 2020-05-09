@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="alert alert-light text-center" role="alert">
+    Welcome to <b>Daniel Naaman's</b> data science project! Please read on to better understand the nature of the project.
+</div>
+
+<a class="weatherwidget-io" href="https://forecast7.com/en/31d9534d91/center-district/" data-label_1="HAMERKAZ" data-label_2="WEATHER" data-theme="original">HAMERKAZ WEATHER</a>
+<script>
+!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = 'https://weatherwidget.io/js/widget.min.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'weatherwidget-io-js');
+</script>
+
+<br />
+
+<h3>Avocados</h3>
+<hr />
+
+<p>Avocados are commercially valuable and are cultivated in tropical and Mediterranean climates throughout the world.</p>
+
+<div class="row">
+    <div class="col-sm">
+        <div class="card">
+            <img src="/static/images/avolemon.jpg" class="card-img-top" alt="Avolemon">
+        </div>
+    </div>
+
+    <div class="col-sm">
+        <div class="card">
+            <img src="/static/images/guacamole.jpg" class="card-img-top" alt="Guacamole">
+        </div>
+    </div>
+
+    <div class="col-sm">
+        <div class="card">
+            <img src="/static/images/nature.jpg" class="card-img-top" alt="Nature">
+        </div>
+    </div>
+</div>
+
+<br />
+
+<h3>Weather</h3>
+<hr />
+
+<p>Weather is the state of the atmosphere, describing for example the degree to which it is hot or cold, wet or dry, calm or stormy, clear or cloudy.</p>
+
+<div class="row">
+    <div class="col-sm">
+        <div class="card">
+            <img src="/static/images/sky.jpg" class="card-img-top" alt="Sky">
+        </div>
+    </div>
+
+    <div class="col-sm">
+        <div class="card">
+            <img src="/static/images/cold.jpg" class="card-img-top" alt="Cold">
+        </div>
+    </div>
+
+    <div class="col-sm">
+        <div class="card">
+            <img src="/static/images/rain.jpg" class="card-img-top" alt="Rain">
+        </div>
+    </div>
+</div>
+
+<br />
+
+<h3>What's The Connection Between Them?</h3>
+<hr />
+
+<p>Avocado Prices are affected by the Weather, read more about the purpose of this project in the <a href="{{ url_for('about') }}">about page</a>.</p>
+        {% endblock %}

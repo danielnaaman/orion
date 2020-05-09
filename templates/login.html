@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}</h2>
+
+<form method=post>
+    {{ form.csrf }}
+    {{ form.csrf_token }}
+    <div class="form-group">
+        {{ form.username.label }}
+        {{ form.username(class_="form-control")}}
+    </div>
+    <div class="form-group">
+        {{ form.password.label }}
+        {{ form.password(class_="form-control") }}
+    </div>
+    <div class="form-group">
+        <input class="btn btn-info" type="submit" value="Login">
+    </div>
+</form>
+
+{% if form.username.errors %}
+    <span class="text-danger">{% for error in form.username.errors %}{{ error }}{% endfor %}</span>
+{% endif %}
+
+{% if form.password.errors %}
+    <span class="text-danger">{% for error in form.password.errors %}{{ error }}{% endfor %}</span>
+{% endif %}
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+       {% for message in messages %}
+            <span class="text-danger">{{ message[1] }}</span>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+{% endblock %}

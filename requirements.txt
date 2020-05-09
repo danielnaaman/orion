@@ -1,0 +1,6 @@
+Flask
+Flask-wtf
+Pandas
+Numpy
+Matplotlib
+Requests

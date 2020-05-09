@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>{{ title }}</h1>
+</div>
+
+<p>This data set details prices of Avocado from the year 2015 till the year 2018 in the various USA states.</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Price</th>
+            <th scope="col">Region</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>The date of observation.</td>
+            <td>The average price for a single avocado in dollars.</td>
+            <td>The state of observation.</td>
+        </tr>
+    </tbody>
+</table>
+
+<center>
+    <button class="btn btn-primary" id="toggleExpand" type="button" data-toggle="collapse" data-target="#dataset" aria-expanded="false" aria-controls="dataset">Toggle Preview</button>
+    <br />
+    <div class="collapse" id="dataset">
+        <br />
+        <div class="card card-body">
+            {{ avocado_prices_preview | safe}}
+        </div>
+    </div>
+</center>
+
+<script>
+
+</script>
+
+{% endblock %}
